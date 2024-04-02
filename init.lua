@@ -2,16 +2,16 @@ local S = moreblocks.S
 local F = minetest.formspec_escape
 
 local custom_subset = {
-	{"micro", "_double_1"},
-	{"micro", "_double_2"},
-	{"micro", "_double_4"},
-	{"micro", "_double_12"},
-	{"micro", "_double_14"},
-	{"micro", "_double_15"},
-	{"micro", "_double_16"},
-	{"micro", "_16"},
-	{"micro", "_pillar"},
-	{"micro", "_pcend"},
+	{"panel", "_double_1"},
+	{"panel", "_double_2"},
+	{"panel", "_double_4"},
+	{"panel", "_double_12"},
+	{"panel", "_double_14"},
+	{"panel", "_double_15"},
+	{"panel", "_double_16"},
+	{"panel", "_16"},
+	{"panel", "_pillar"},
+	{"panel", "_pcend"},
 
 	{"slab", "_two_sides_half"},
 	{"slab", "_two_sides_half_2"},
@@ -113,51 +113,51 @@ local function pixel_box(x1, y1, z1, x2, y2, z2)
 end
 
 
--- Micros boxes
-stairsplus.defs.micro._double_1 = node_box({
+-- Panels boxes
+stairsplus.defs.panel._double_1 = node_box({
 	{-0.5, -0.5, -0.5, 0, -0.4375, 0},
 	{0, -0.5, 0, 0.5, -0.4375, 0.5}
 })
 
-stairsplus.defs.micro._double_2 = node_box({
+stairsplus.defs.panel._double_2 = node_box({
 	{-0.5, -0.5, -0.5, 0, -0.375, 0},
 	{0, -0.5, 0, 0.5, -0.375, 0.5}
 })
 
-stairsplus.defs.micro._double_4 = node_box({
+stairsplus.defs.panel._double_4 = node_box({
 	{-0.5, -0.5, -0.5, 0, -0.25, 0},
 	{0, -0.5, 0, 0.5, -0.25, 0.5}
 })
 
-stairsplus.defs.micro._double_12 = node_box({
+stairsplus.defs.panel._double_12 = node_box({
 	{-0.5, -0.5, -0.5, 0, 0.25, 0},
 	{0, -0.5, 0, 0.5, 0.25, 0.5}
 })
 
-stairsplus.defs.micro._double_14 = node_box({
+stairsplus.defs.panel._double_14 = node_box({
 	{-0.5, -0.5, -0.5, 0, 0.375, 0},
 	{0, -0.5, 0, 0.5, 0.375, 0.5}
 })
 
-stairsplus.defs.micro._double_15 = node_box({
+stairsplus.defs.panel._double_15 = node_box({
 	{-0.5, -0.5, -0.5, 0, 0.4375, 0},
 	{0, -0.5, 0, 0.5, 0.4375, 0.5}
 })
 
-stairsplus.defs.micro._double_16 = node_box({
+stairsplus.defs.panel._double_16 = node_box({
 	{-0.5, -0.5, -0.5, 0, 0.5, 0},
 	{0, -0.5, 0, 0.5, 0.5, 0.5}
 })
 
-stairsplus.defs.micro["_16"] = node_box({-0.5, -0.5, 0, 0.5, 0.5, 0.5})
+stairsplus.defs.panel["_16"] = node_box({-0.5, -0.5, 0, 0.5, 0.5, 0.5})
 
-stairsplus.defs.micro._pillar = node_box({
+stairsplus.defs.panel._pillar = node_box({
 	pixel_box(2, 0, 5, 14, 16, 11),
 	pixel_box(3, 0, 3, 13, 16, 13),
 	pixel_box(5, 0, 2, 11, 16, 14)
 })
 
-stairsplus.defs.micro._pcend = node_box({
+stairsplus.defs.panel._pcend = node_box({
 	pixel_box(2, 0, 5, 14, 16, 11),
 	pixel_box(3, 0, 3, 13, 16, 13),
 	pixel_box(5, 0, 2, 11, 16, 14),
@@ -389,7 +389,7 @@ stairsplus.defs.slope._inner_cut8 = mesh_def("moreblocks_slope_inner_cut8.obj", 
 	{0, 0, -0.25, 0.25, 0.5, 0}
 })
 
-stairsplus.defs.slope._cut2 = mesh_def("xslopes_cut.obj", {
+stairsplus.defs.slope._cut2 = mesh_def("moreblocks_xslopes_cut.obj", {
 	{-0.5,     -0.5,     0, 0.5,  0.25, 0.5},
 	{-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
 })
@@ -408,66 +408,66 @@ stairsplus.defs.slope._rh = mesh_def("moreblocks_slope_rh.obj", {
 	{0,  0.25,  0.25, 0.5,   0.5, 0.5}
 })
 
-stairsplus.defs.slope._peak_half_lh = mesh_def("xslopes_peak_half_lh.obj", {
+stairsplus.defs.slope._peak_half_lh = mesh_def("moreblocks_xslopes_peak_half_lh.obj", {
 	{-0.5,  -0.5,  -0.5, 0, -0.25, -0.25},
 	{-0.5, -0.5, -0.25, 0,     0, 0},
 	{-0.5,  -0.5,     0, 0,  0, 0.25},
 	{-0.5,  -0.5,  0.25, 0,   -0.25, 0.5}
 })
 
-stairsplus.defs.slope._peak_half = mesh_def("xslopes_peak_half.obj", {
+stairsplus.defs.slope._peak_half = mesh_def("moreblocks_xslopes_peak_half.obj", {
 	{-0.5,  -0.5,  -0.5, 0.5, -0.25, -0.25},
 	{-0.5, -0.5, -0.25, 0.5,     0, 0},
 	{-0.5,  -0.5,     0, 0.5,  0, 0.25},
 	{-0.5,  -0.5,  0.25, 0.5,   -0.25, 0.5}
 })
 
-stairsplus.defs.slope._peak_lh = mesh_def("xslopes_peak_lh.obj", {
+stairsplus.defs.slope._peak_lh = mesh_def("moreblocks_xslopes_peak_lh.obj", {
 	{-0.5,  -0.5,  -0.5, 0, 0, -0.25},
 	{-0.5, -0.5, -0.25, 0,     0.5, 0},
 	{-0.5,  -0.5,     0, 0,  0.5, 0.25},
 	{-0.5,  -0.5,  0.25, 0,   0, 0.5}
 })
 
-stairsplus.defs.slope._peak = mesh_def("xslopes_peak.obj", {
+stairsplus.defs.slope._peak = mesh_def("moreblocks_xslopes_peak.obj", {
 	{-0.5,  -0.5,  -0.5, 0.5, 0, -0.25},
 	{-0.5, -0.5, -0.25, 0.5,     0.5, 0},
 	{-0.5,  -0.5,     0, 0.5,  0.5, 0.25},
 	{-0.5,  -0.5,  0.25, 0.5,   0, 0.5}
 })
 
-stairsplus.defs.slope._quarter = mesh_def("xslopes_quarter.obj", {
+stairsplus.defs.slope._quarter = mesh_def("moreblocks_xslopes_quarter.obj", {
 	{-0.5, -0.5, -0.5, -0.25, -0.25, 0},
 	{-0.5, -0.5, 0, 0, 0, 0.5}
 })
 
-stairsplus.defs.slope._quarter2 = mesh_def("xslopes_quarter2.obj", {
+stairsplus.defs.slope._quarter2 = mesh_def("moreblocks_xslopes_quarter2.obj", {
 	{0.25, -0.5, -0.5, 0.5, -0.25, 0},
 	{0, -0.5, 0, 0.25, 0, 0.5}
 })
 
-stairsplus.defs.slope._slope_lh = mesh_def("xslopes_slope_lh.obj", {
+stairsplus.defs.slope._slope_lh = mesh_def("moreblocks_xslopes_slope_lh.obj", {
 	{-0.5, -0.5, 0, 0, -0.25, 0.5},
 	{-0.5, -0.25, 0.25, 0, 0, 0.5}
 })
 
-stairsplus.defs.slope._slope_rh = mesh_def("xslopes_slope_rh.obj", {
+stairsplus.defs.slope._slope_rh = mesh_def("moreblocks_xslopes_slope_rh.obj", {
 	{0, -0.5, 0, 0.5, -0.25, 0.5},
 	{0, -0.25, 0.25, 0.5, 0, 0.5}
 })
 
-stairsplus.defs.slope._slope = mesh_def("xslopes_slope.obj", {
+stairsplus.defs.slope._slope = mesh_def("moreblocks_xslopes_slope.obj", {
 	{-0.5, -0.5, 0, 0.5, -0.25, 0.5},
 	{-0.5, -0.25, 0.25, 0.5, 0, 0.5}
 })
 
-stairsplus.defs.slope._three_quarter_half = mesh_def("xslopes_three_quarter_half.obj", {
+stairsplus.defs.slope._three_quarter_half = mesh_def("moreblocks_xslopes_three_quarter_half.obj", {
 	{-0.5, -0.5, 0, 0.25, 0.25, 0.5},
 	{-0.5, 0.25, 0.25, 0.5, 0.5, 0.5},
 	{0.25, -0.5, 0.25, 0.5, 0.5, 0.5}
 })
 
-stairsplus.defs.slope._three_quarter = mesh_def("xslopes_three_quarter.obj", {
+stairsplus.defs.slope._three_quarter = mesh_def("moreblocks_xslopes_three_quarter.obj", {
 	{-0.5, -0.5, -0.5, 0, 0, -0.25},
 	{-0.5, -0.5, -0.25, 0.25, 0.25, 0.25},
 	{-0.5, -0.5, 0.25, 0.5, 0.5, 0.5}
@@ -536,11 +536,11 @@ stairsplus.defs.stair._alt_6 = node_box({
 
 
 -- Register all missing microblocks nodes of the materials for which the microblocks were already registered before
-for _, material_data in ipairs(circular_saw.known_nodes) do
-	local nodename = material_data[1] .. ":" .. material_data[2]
-	local def = minetest.registered_nodes[nodename]
+--minetest.debug("registered materials: " .. dump(circular_saw.known_nodes))
+for material_name, material_data in pairs(circular_saw.known_nodes) do
+	local def = minetest.registered_nodes[material_name]
 
-	stairsplus:register_custom_subset(custom_subset, material_data[1], material_data[2], nodename, def)
+	stairsplus:register_custom_subset(custom_subset, material_data[1], material_data[2], material_name, def)
 end
 
 
